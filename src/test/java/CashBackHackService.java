@@ -4,10 +4,16 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class CashBackHackService {
 
-    private final int boundary = 1000;
+    private final int bonusBound = 1000;
 
     public int remain(int amount) {
-        return boundary - amount % boundary;
+        boolean isNeedMore = amount % bonusBound != 0;
+        if (!isNeedMore) {
+            return 0;
+        }
+
+        int remain = bonusBound - amount % bonusBound;
+        return remain;
     }
 
     @Test
