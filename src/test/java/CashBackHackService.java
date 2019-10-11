@@ -18,7 +18,7 @@ public class CashBackHackService {
 
     @Test
     void cashBackTest() {
-        assertEquals(100, remain(900), "Wrong data to expected");
+        assertEquals(101, remain(900), "Wrong data to expected");
     }
 
     @Test
