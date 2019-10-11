@@ -1,4 +1,6 @@
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvFileSource;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -16,9 +18,10 @@ public class CashBackHackService {
         return remain;
     }
 
-    @Test
-    void cashBackTest() {
-        assertEquals(100, remain(900), "Wrong data to expected");
+    @ParameterizedTest
+    @CsvFileSource(resources = "testData.cvs", numLinesToSkip = 1)
+    void cashBackTest(int expected, int amount, String message) {
+        assertEquals(expected, remain(amount), message);
     }
 
     @Test

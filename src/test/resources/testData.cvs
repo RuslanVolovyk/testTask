@@ -1,0 +1,4 @@
+ expected,amount,String message
+1,999,Should be 1 for amount = 999
+999,1001,Should be 900 for amount = 1001
+0,1000,Should be 0 for amount = 1000
